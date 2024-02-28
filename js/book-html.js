@@ -13,27 +13,27 @@ function loadHTML(filePath) {
             detailsDiv.innerHTML = xhr.responseText;
         }
     };
-    xhr.open('GET', filePath, true);
+    xhr.open('GET', data/, true);
     xhr.send();
 }
 
 const donQuixoteImage = document.querySelector('#don-quixote-img');
 donQuixoteImage.addEventListener('click', function() {
-    loadHTML('data/cervantes-data.html'); 
+    loadHTML('cervantes-data.html'); 
     changeImageOpacity();
     donQuixoteImage.style.opacity = 1;
 });
 
 const taleOfTwoCitiesImage = document.querySelector('#two-cities-img');
 taleOfTwoCitiesImage.addEventListener('click', function() {
-    loadHTML('data/dickens-data.html'); 
+    loadHTML('dickens-data.html'); 
     changeImageOpacity();
     taleOfTwoCitiesImage.style.opacity = 1;
 });
 
 const lordOfTheRingsImage = document.querySelector('#lotr-img');
 lordOfTheRingsImage.addEventListener('click', function() {
-    loadHTML('data/tolkein-data.html');
+    loadHTML('tolkein-data.html');
     changeImageOpacity();
     lordOfTheRingsImage.style.opacity = 1;
 });
