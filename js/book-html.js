@@ -36,6 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const lordOfTheRingsImage = document.querySelector('#lotr-img');
     lordOfTheRingsImage.addEventListener('click', function() {
-        handleImageClick(lordOfTheRingsImage, 'tolkien-data.html');
+        handleImageClick(lordOfTheRingsImage, 'tolkein-data.html');
     });
 });
