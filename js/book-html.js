@@ -13,7 +13,7 @@ function loadHTML(filePath) {
             detailsDiv.innerHTML = xhr.responseText;
         }
     };
-    xhr.open('GET', data/, true);
+    xhr.open('GET','../data/', true);
     xhr.send();
 }
 
