@@ -1,6 +1,5 @@
-const images = document.querySelectorAll('img');
-
 function changeImageOpacity() {
+    const images = document.querySelectorAll('img');
     images.forEach((image) => {
         image.style.opacity = 0.5;
     });
@@ -14,7 +13,7 @@ function loadHTML(filePath) {
             detailsDiv.innerHTML = xhr.responseText;
         }
     };
-    xhr.open('GET', 'data/', true);
+    xhr.open('GET', 'data/' + filePath, true);
     xhr.send();
 }
 
@@ -24,17 +23,19 @@ function handleImageClick(imageElement, dataFile) {
     imageElement.style.opacity = 1;
 }
 
-const donQuixoteImage = document.querySelector('#don-quixote-img');
-donQuixoteImage.addEventListener('click', function() {
-    handleImageClick(donQuixoteImage, 'cervantes-data.html');
-});
+document.addEventListener('DOMContentLoaded', function() {
+    const donQuixoteImage = document.querySelector('#don-quixote-img');
+    donQuixoteImage.addEventListener('click', function() {
+        handleImageClick(donQuixoteImage, 'cervantes-data.html');
+    });
 
-const taleOfTwoCitiesImage = document.querySelector('#two-cities-img');
-taleOfTwoCitiesImage.addEventListener('click', function() {
-    handleImageClick(taleOfTwoCitiesImage, 'dickens-data.html');
-});
+    const taleOfTwoCitiesImage = document.querySelector('#two-cities-img');
+    taleOfTwoCitiesImage.addEventListener('click', function() {
+        handleImageClick(taleOfTwoCitiesImage, 'dickens-data.html');
+    });
 
-const lordOfTheRingsImage = document.querySelector('#lotr-img');
-lordOfTheRingsImage.addEventListener('click', function() {
-    handleImageClick(lordOfTheRingsImage, 'tolkein-data.html');
+    const lordOfTheRingsImage = document.querySelector('#lotr-img');
+    lordOfTheRingsImage.addEventListener('click', function() {
+        handleImageClick(lordOfTheRingsImage, 'tolkien-data.html');
+    });
 });
