@@ -39,16 +39,16 @@ function handleImageClick(imageElement, dataFile, subElementIndex) {
 document.addEventListener('DOMContentLoaded', function() {
     const donQuixoteImage = document.querySelector('#don-quixote-img');
     donQuixoteImage.addEventListener('click', function() {
-        handleImageClick(donQuixoteImage, 'don-quixote-data.xml', 0);
+        handleImageClick(donQuixoteImage, 'book-data.xml', 0);
     });
 
     const taleOfTwoCitiesImage = document.querySelector('#two-cities-img');
     taleOfTwoCitiesImage.addEventListener('click', function() {
-        handleImageClick(taleOfTwoCitiesImage, 'tale-of-two-cities-data.xml', 1);
+        handleImageClick(taleOfTwoCitiesImage, 'book-data.xml', 1);
     });
 
     const lordOfTheRingsImage = document.querySelector('#lotr-img');
     lordOfTheRingsImage.addEventListener('click', function() {
-        handleImageClick(lordOfTheRingsImage, 'lord-of-the-rings-data.xml', 2);
+        handleImageClick(lordOfTheRingsImage, 'book-data.xml', 2);
     });
 });
