@@ -19,21 +19,21 @@ function loadHTML(filePath) {
 
 const donQuixoteImage = document.querySelector('#don-quixote-img');
 donQuixoteImage.addEventListener('click', function() {
-    loadHTML('cervantes-data.html'); 
+    loadHTML('data/cervantes-data.html'); 
     changeImageOpacity();
     donQuixoteImage.style.opacity = 1;
 });
 
 const taleOfTwoCitiesImage = document.querySelector('#two-cities-img');
 taleOfTwoCitiesImage.addEventListener('click', function() {
-    loadHTML('dickens-data.html'); 
+    loadHTML('data/dickens-data.html'); 
     changeImageOpacity();
     taleOfTwoCitiesImage.style.opacity = 1;
 });
 
 const lordOfTheRingsImage = document.querySelector('#lotr-img');
 lordOfTheRingsImage.addEventListener('click', function() {
-    loadHTML('tolkein-data.html');
+    loadHTML('data/tolkein-data.html');
     changeImageOpacity();
     lordOfTheRingsImage.style.opacity = 1;
 });
