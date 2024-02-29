@@ -12,17 +12,26 @@ function loadXML(filePath, subElementIndex) {
             const parser = new DOMParser();
             const xmlDoc = parser.parseFromString(xhr.responseText, 'text/xml');
 
-            // Process the XML data and add it to the DOM
             const detailsDiv = document.getElementById('details');
             detailsDiv.innerHTML = ''; // Clear the existing content
 
-            const subElements = xmlDoc.querySelectorAll('*');
-            const selectedSubElement = subElements[subElementIndex];
+            const books = xmlDoc.getElementsByTagName('book');
+            const selectedBook = books[subElementIndex];
 
-            // Check if the selected sub-element exists
-            if (selectedSubElement) {
-                // Extract text content and append it to the detailsDiv
-                detailsDiv.appendChild(document.createTextNode(selectedSubElement.textContent));
+            // Check if the selected <book> element exists
+            if (selectedBook) {
+                // Extract information and append it to the detailsDiv
+                const title = selectedBook.querySelector('title').textContent;
+                const author = selectedBook.querySelector('author').textContent;
+                const sold = selectedBook.querySelector('sold').textContent;
+                const description = selectedBook.querySelector('description').textContent;
+
+                detailsDiv.innerHTML = `
+                    <p>Title: ${title}</p>
+                    <p>Author: ${author}</p>
+                    <p>Sold: ${sold}</p>
+                    <p>Description: ${description}</p>
+                `;
             }
         }
     };
