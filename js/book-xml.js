@@ -11,7 +11,7 @@ function loadXML(filePath, subElementIndex) {
         if (xhr.status === 200) {
             const parser = new DOMParser();
             const xmlDoc = parser.parseFromString(xhr.responseText, 'text/xml');
-            
+
             // Process the XML data and add it to the DOM
             const detailsDiv = document.getElementById('details');
             detailsDiv.innerHTML = ''; // Clear the existing content
@@ -21,8 +21,8 @@ function loadXML(filePath, subElementIndex) {
 
             // Check if the selected sub-element exists
             if (selectedSubElement) {
-                // Add the selected sub-element to the detailsDiv
-                detailsDiv.appendChild(selectedSubElement.cloneNode(true));
+                // Extract text content and append it to the detailsDiv
+                detailsDiv.appendChild(document.createTextNode(selectedSubElement.textContent));
             }
         }
     };
