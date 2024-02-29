@@ -7,7 +7,7 @@ $(document).ready(function() {
         // Use the .load() method to specify the URL of the HTML page to load
         $('#details').fadeOut('fast', function() {
             // Full URL of the HTML file
-            $(this).load('https://cleuteritz.rhody.dev/lab5/data/cervantes-data.htlm').fadeIn('fast');
+            $(this).load('https://cleuteritz.rhody.dev/lab5/data/cervantes-data.html').fadeIn('fast');
         });
     });
 
