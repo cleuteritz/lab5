@@ -7,7 +7,7 @@ function changeImageOpacity() {
 
 function loadXML(filePath, subElementIndex) {
     const xhr = new XMLHttpRequest();
-    xhr.onload = function() {
+    xhr.onload = function () {
         if (xhr.status === 200) {
             const parser = new DOMParser();
             const xmlDoc = parser.parseFromString(xhr.responseText, 'text/xml');
@@ -21,10 +21,10 @@ function loadXML(filePath, subElementIndex) {
             // Check if the selected <book> element exists
             if (selectedBook) {
                 // Extract information and append it to the detailsDiv
-                const title = selectedBook.querySelector('title').textContent;
-                const author = selectedBook.querySelector('author').textContent;
-                const sold = selectedBook.querySelector('sold').textContent;
-                const description = selectedBook.querySelector('description').textContent;
+                const title = selectedBook.getElementsByTagName('title')[0].textContent;
+                const author = selectedBook.getElementsByTagName('author')[0].textContent;
+                const sold = selectedBook.getElementsByTagName('sold')[0].textContent;
+                const description = selectedBook.getElementsByTagName('description')[0].textContent;
 
                 detailsDiv.innerHTML = `
                     <p>Title: ${title}</p>
@@ -35,7 +35,7 @@ function loadXML(filePath, subElementIndex) {
             }
         }
     };
-    xhr.open('GET', filePath, true);
+    xhr.open('GET', 'data/book-data.xml', true);
     xhr.send();
 }
 
@@ -45,19 +45,19 @@ function handleImageClick(imageElement, dataFile, subElementIndex) {
     imageElement.style.opacity = 1;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    const donQuixoteImage = document.querySelector('#don-quixote-img');
-    donQuixoteImage.addEventListener('click', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    const donQuixoteImage = document.getElementById('don-quixote-img');
+    donQuixoteImage.addEventListener('click', function () {
         handleImageClick(donQuixoteImage, 'book-data.xml', 0);
     });
 
-    const taleOfTwoCitiesImage = document.querySelector('#two-cities-img');
-    taleOfTwoCitiesImage.addEventListener('click', function() {
+    const taleOfTwoCitiesImage = document.getElementById('two-cities-img');
+    taleOfTwoCitiesImage.addEventListener('click', function () {
         handleImageClick(taleOfTwoCitiesImage, 'book-data.xml', 1);
     });
 
-    const lordOfTheRingsImage = document.querySelector('#lotr-img');
-    lordOfTheRingsImage.addEventListener('click', function() {
+    const lordOfTheRingsImage = document.getElementById('lotr-img');
+    lordOfTheRingsImage.addEventListener('click', function () {
         handleImageClick(lordOfTheRingsImage, 'book-data.xml', 2);
     });
 });
